@@ -18,12 +18,12 @@ import {
   // GET_CREATORS,
 } from "../actions";
 import md5 from "js-md5";
-
-const PUBLIC_KEY = "90f3c7ccb35efbb76e4bc98668685d38";
+  //Alteração das chaves 
+const PUBLIC_KEY = "3474e958b1cd4e725fded1b957620f2d";
 const TIME_STAMP = Date.now().toString();
 
 const hashGenerator = () => {
-  const PRIVATE_KEY = "fd9435ff14b92b7935b7cb39495860414f142707";
+  const PRIVATE_KEY = "a947ee7601c8688b1451f946d9a38572c4123400";
   const HASH = md5.create();
   HASH.update(TIME_STAMP + PRIVATE_KEY + PUBLIC_KEY);
   return HASH.hex();
