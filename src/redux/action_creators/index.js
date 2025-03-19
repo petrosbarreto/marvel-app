@@ -19,11 +19,11 @@ import {
 } from "../actions";
 import md5 from "js-md5";
 
-const PUBLIC_KEY = "90f3c7ccb35efbb76e4bc98668685d38";
+const PUBLIC_KEY = "95e2fa82688d3924e560b34c9d72b5fb";
 const TIME_STAMP = Date.now().toString();
 
 const hashGenerator = () => {
-  const PRIVATE_KEY = "fd9435ff14b92b7935b7cb39495860414f142707";
+  const PRIVATE_KEY = "aa7cef3d28ed7a7856a1f7c586d021ce19ce879c";
   const HASH = md5.create();
   HASH.update(TIME_STAMP + PRIVATE_KEY + PUBLIC_KEY);
   return HASH.hex();
