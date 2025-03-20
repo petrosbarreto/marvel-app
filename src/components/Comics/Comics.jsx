@@ -28,7 +28,7 @@ const Comics = () => {
         <input
           className={s.comicInput}
           type="text"
-          placeholder="Search by character..."
+          placeholder="buscar por personagem..."
           value={input}
           onChange={(e) => handleInput(e)}
         />

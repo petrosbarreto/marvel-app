@@ -44,7 +44,7 @@ export const getCharacters = (character) => {
 };
 
 export const resetCharacters = () => {
-  console.log("reset");
+  console.log("resetar");
   return {
     type: RESET_CHARACTERS,
   };
