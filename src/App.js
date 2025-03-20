@@ -21,8 +21,8 @@ function App() {
       <Aside />
       <Routes>
         <Route path="/" element={<Characters />} />
-        <Route path="/comics" element={<Comics />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/quadrinhos" element={<Comics />} />
+        <Route path="/eventos" element={<Events />} />
         {/* <Route path="/series" element={<Series />} /> */}
         {/* <Route path="/stories" element={<Stories />} /> */}
         <Route

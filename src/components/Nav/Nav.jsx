@@ -32,20 +32,20 @@ const Nav = () => {
         <NavLink className={s.navLink} to="/">
           <li>Characters</li>
         </NavLink>
-        <NavLink className={s.navLink} to="/comics">
-          <li>Comics</li>
+        <NavLink className={s.navLink} to="/quadrinhos">
+          <li>Quadrinhos</li>
         </NavLink>
         {/* <NavLink className={s.navLink} to="/creators">
           <li>Creators</li>
         </NavLink> */}
-        <NavLink className={s.navLink} to="/events">
+        <NavLink className={s.navLink} to="/eventos">
           <li>Events</li>
         </NavLink>
         {/* <NavLink className={s.navLink} to="/series">
           <li>Series</li>
         </NavLink> */}
-        <NavLink className={s.navLink} to="/stories">
-          <li>Stories</li>
+        <NavLink className={s.navLink} to="/historias">
+          <li>Historia</li>
         </NavLink>
       </ul>
     </nav>
