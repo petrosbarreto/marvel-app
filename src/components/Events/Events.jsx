@@ -28,7 +28,7 @@ const Events = () => {
         <input
           className={s.eventInput}
           type="text"
-          placeholder="Search by first letters..."
+          placeholder="Pesquisar pelas primeiras letras..."
           value={input}
           onChange={(e) => handleInput(e)}
         />

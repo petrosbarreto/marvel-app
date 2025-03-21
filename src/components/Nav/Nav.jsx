@@ -30,22 +30,22 @@ const Nav = () => {
       </div>
       <ul onClick={(e) => handleClick(e)} className={s.navMenu}>
         <NavLink className={s.navLink} to="/">
-          <li>Characters</li>
+          <li>Personagens</li>
         </NavLink>
         <NavLink className={s.navLink} to="/comics">
-          <li>Comics</li>
+          <li>Quadrinhos</li>
         </NavLink>
         {/* <NavLink className={s.navLink} to="/creators">
           <li>Creators</li>
         </NavLink> */}
         <NavLink className={s.navLink} to="/events">
-          <li>Events</li>
+          <li>Eventos</li>
         </NavLink>
         {/* <NavLink className={s.navLink} to="/series">
           <li>Series</li>
         </NavLink> */}
         <NavLink className={s.navLink} to="/stories">
-          <li>Stories</li>
+          <li>Historias</li>
         </NavLink>
       </ul>
     </nav>

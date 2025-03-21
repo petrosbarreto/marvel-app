@@ -8,7 +8,7 @@ const Stories = () => {
   useEffect(() => {
     dispatch(getStories());
   }, []);
-  return <div>stories</div>;
+  return <div>Historias</div>;
 };
 
 export default Stories;

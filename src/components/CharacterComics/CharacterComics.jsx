@@ -10,7 +10,7 @@ const CharacterComics = () => {
   if (characterComics === "N/A")
     return (
       <div className={s.noCharacters}>
-        <h1>This character doesn't have comics to show</h1>
+        <h1>Este personagem não tem quadrinhos para mostrar</h1>
         <NavLink className={s.link} to="/">
           <span>←Go back</span>
         </NavLink>

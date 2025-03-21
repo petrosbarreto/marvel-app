@@ -37,7 +37,7 @@ const Characters = () => {
         <input
           className={s.charInput}
           type="text"
-          placeholder="Search characters..."
+          placeholder="Pesquisar personagens..."
           value={input}
           onChange={(e) => handleInput(e)}
         />
