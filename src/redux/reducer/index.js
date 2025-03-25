@@ -1,4 +1,4 @@
-import {
+import { //importa ações
   GET_CHARACTERS,
   RESET_CHARACTERS,
   GET_CHARACTER,
@@ -13,13 +13,11 @@ import {
   REMOVE_CHARACTER_FROM_FAVOURITES,
   ADD_COMIC_TO_FAVOURITES,
   REMOVE_COMIC_FROM_FAVOURITES,
-  // GET_SERIES,
   GET_STORIES,
-  // GET_CREATORS,
 } from "../actions";
-
-const initialState = {
-  characters: [],
+// estado inicial 
+const initialState = { 
+  characters: [], 
   character: {},
   characterComics: [],
   characterEvents: [],
@@ -28,15 +26,13 @@ const initialState = {
   comics: [],
   comic: {},
   events: [],
-  // series: [],
-  stories: [],
-  // creators: [],
+  stories: [], 
 };
-
+// Redutor principal da aplicação
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_CHARACTERS:
-      const chars = action.payload.filter(
+    case GET_CHARACTERS: //filtrar personagens com imagens válidas 
+      const chars = action.payload.filter( 
         (character) =>
           character.thumbnail.path.split("/").pop() !== "image_not_available" &&
           character.thumbnail.extension !== "gif"
@@ -49,9 +45,10 @@ export default function rootReducer(state = initialState, action) {
     case GET_CHARACTER:
       return {
         ...state,
-        character: action.payload,
+        character: action.payload, //Define os detalhes do personagem
       };
-
+      
+//filtrar quadrinho validos 
     case GET_CHARACTER_COMICS:
       if (!action.payload.length)
         return {
@@ -62,12 +59,13 @@ export default function rootReducer(state = initialState, action) {
         (comic) =>
           comic.thumbnail.path.split("/").pop() !== "image_not_available" &&
           comic.thumbnail.extension !== "gif"
-      );
+      );  
       return {
         ...state,
         characterComics: filteredComics,
       };
 
+//  definir eventos ou N/A
     case GET_CHARACTER_EVENTS:
       if (!action.payload.length)
         return {
@@ -78,25 +76,25 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         characterEvents: action.payload,
       };
-
+// Reseta  quadrinhos do personagem 
     case RESET_CHARACTER_COMICS:
       return {
         ...state,
         characterComics: [],
       };
-
+// reseta eventos do personagem
     case RESET_CHARACTER_EVENTS:
       return {
         ...state,
         characterEvents: [],
       };
-
+// reseta  personagens 
     case RESET_CHARACTERS:
       return {
         ...state,
         characters: [],
       };
-
+// adiciona personagem ao favorito
     case ADD_CHARACTER_TO_FAVOURITES:
       const character = state.characters.find(
         (char) => char.id === action.payload
@@ -106,7 +104,7 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         favouriteCharacters: [...state.favouriteCharacters, character],
       };
-
+// remove personagens do favoritos 
     case REMOVE_CHARACTER_FROM_FAVOURITES:
       return {
         ...state,
@@ -114,7 +112,7 @@ export default function rootReducer(state = initialState, action) {
           (char) => char.id !== action.payload
         ),
       };
-
+// adiciona quadrinhos aos favoritos
     case ADD_COMIC_TO_FAVOURITES:
       const comic = state.comics.find((comic) => comic.id === action.payload);
       const charComic = state.characterComics.find(
@@ -124,7 +122,7 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         favouriteComics: [...state.favouriteComics, comic ? comic : charComic],
       };
-
+// remove quadrinhos dos favoritos 
     case REMOVE_COMIC_FROM_FAVOURITES:
       return {
         ...state,
@@ -132,8 +130,8 @@ export default function rootReducer(state = initialState, action) {
           (comic) => comic.id !== action.payload
         ),
       };
-
-    case GET_COMICS:
+// filtra quadrinhos 
+    case GET_COMICS: 
       const comics = action.payload.filter(
         (comic) =>
           comic.thumbnail.path.split("/").pop() !== "image_not_available" &&
@@ -147,32 +145,22 @@ export default function rootReducer(state = initialState, action) {
     case GET_COMIC:
       return {
         ...state,
-        comic: action.payload,
+        comic: action.payload, //define detalhes do quadrinho
       };
 
     case GET_EVENTS:
       return {
         ...state,
-        events: action.payload,
+        events: action.payload, //define a lista de eventos
       };
 
-    // case GET_SERIES:
-    //   return {
-    //     ...state,
-    //     series: action.payload,
-    //   };
-
+  
     case GET_STORIES:
       return {
         ...state,
-        stories: action.payload,
+        stories: action.payload, //define a lista de histórias
       };
 
-    // case GET_CREATORS:
-    //   return {
-    //     ...state,
-    //     creators: action.payload,
-    //   };
 
     default:
       return state;
